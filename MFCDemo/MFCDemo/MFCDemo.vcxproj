@@ -76,6 +76,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)IDE;$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -183,15 +184,17 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MFCDemo.h" />
-    <ClInclude Include="MFCDemoDlg.h" />
+    <ClInclude Include="Utils\DataFormat.h" />
+    <ClInclude Include="IDE\MFCDemo.h" />
+    <ClInclude Include="IDE\MFCDemoDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MFCDemo.cpp" />
-    <ClCompile Include="MFCDemoDlg.cpp" />
+    <ClCompile Include="Utils\DataFormat.cpp" />
+    <ClCompile Include="IDE\MFCDemo.cpp" />
+    <ClCompile Include="IDE\MFCDemoDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

@@ -7,6 +7,8 @@
 #include "MFCDemoDlg.h"
 #include "afxdialogex.h"
 
+#include "Utils/DataFormat.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -158,9 +160,9 @@ HCURSOR CMFCDemoDlg::OnQueryDragIcon()
 void CMFCDemoDlg::OnBnClickedOk()
 {
 
-	CString str = _T("185");
+	CString str = _T("你好");
 
-	unsigned short k = _ttoi(str);
+	unsigned short k = hyw::utils::CStringToUnShort(str);
 
 	TRACE("%d ======\n", (int)k);
 }
