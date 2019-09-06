@@ -4,6 +4,28 @@ Use To Record  The Test Demo
 
 ## MFC Demo
 
+### 工程结构
+
+```shell
+D:.
+└─MFCDemo
+    ├─Debug
+    └─MFCDemo
+        ├─Debug
+        │  └─MFCDemo.tlog
+        ├─IDE
+        ├─res
+        ├─Test
+        │  └─Utils
+        └─Utils
+```
+
+IDE：主要放置MFC主框架的类
+
+Test：主要放置测试类
+
+utils：主要放置需要使用的工具类
+
 ### 工具类
 
 #### DataFormat 数据格式转换
