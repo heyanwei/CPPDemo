@@ -2,6 +2,12 @@
 #include "SingletonCT.h"
 
 
+SingletonCT & SingletonCT::Instance()
+{
+	static SingletonCT theCT;
+	return theCT;
+}
+
 void SingletonCT::Test()
 {
 	TRACE("TEST....\n");

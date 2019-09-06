@@ -3,11 +3,7 @@
 class SingletonCT
 {
 public:
-	static SingletonCT& Instance()
-	{
-		static SingletonCT theCT;
-		return theCT;
-	}
+	static SingletonCT& Instance();
 
 	void Test();
 
