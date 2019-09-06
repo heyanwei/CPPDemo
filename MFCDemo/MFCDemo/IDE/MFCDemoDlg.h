@@ -4,6 +4,9 @@
 
 #pragma once
 
+#include <memory>
+
+class TestManager;
 
 // CMFCDemoDlg 对话框
 class CMFCDemoDlg : public CDialogEx
@@ -20,6 +23,8 @@ public:
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持
 
+private:
+	std::shared_ptr<TestManager> _testMgr;
 
 // 实现
 protected:
@@ -33,4 +38,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedOk();
+
+
 };

@@ -7,7 +7,7 @@
 #include "MFCDemoDlg.h"
 #include "afxdialogex.h"
 
-#include "Utils/DataFormat.h"
+#include "Test/TestManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -102,6 +102,7 @@ BOOL CMFCDemoDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+	_testMgr = std::make_shared<TestManager>();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -159,10 +160,5 @@ HCURSOR CMFCDemoDlg::OnQueryDragIcon()
 
 void CMFCDemoDlg::OnBnClickedOk()
 {
-
-	CString str = _T("你好");
-
-	unsigned short k = hyw::utils::CStringToUnShort(str);
-
-	TRACE("%d ======\n", (int)k);
+	_testMgr->_dataFormat->CStringToUShort();
 }

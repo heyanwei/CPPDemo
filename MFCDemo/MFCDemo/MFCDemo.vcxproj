@@ -184,6 +184,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Test\TestManager.h" />
+    <ClInclude Include="Test\Utils\TestDataFormat.h" />
     <ClInclude Include="Utils\DataFormat.h" />
     <ClInclude Include="IDE\MFCDemo.h" />
     <ClInclude Include="IDE\MFCDemoDlg.h" />
@@ -192,6 +194,8 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Test\TestManager.cpp" />
+    <ClCompile Include="Test\Utils\TestDataFormat.cpp" />
     <ClCompile Include="Utils\DataFormat.cpp" />
     <ClCompile Include="IDE\MFCDemo.cpp" />
     <ClCompile Include="IDE\MFCDemoDlg.cpp" />

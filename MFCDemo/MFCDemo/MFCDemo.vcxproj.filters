@@ -33,6 +33,12 @@
     <ClInclude Include="Utils\DataFormat.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Test\Utils\TestDataFormat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\TestManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,6 +51,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Utils\DataFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\Utils\TestDataFormat.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\TestManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
