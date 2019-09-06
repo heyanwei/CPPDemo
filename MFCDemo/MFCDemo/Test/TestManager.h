@@ -11,5 +11,8 @@ public:
 	~TestManager();
 
 	std::shared_ptr<TestDataFormat> _dataFormat;
+
+private:
+	void TestInStart();
 };
 
