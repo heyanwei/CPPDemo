@@ -39,6 +39,24 @@
     <ClInclude Include="Test\TestManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\File\csv.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RouteManager\file\RouteFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RouteManager\object\HWPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RouteManager\object\HWSegment.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RouteManager\object\HWStation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RouteManager\RouteManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -57,6 +75,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\object\HWPoint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\object\HWSegment.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\object\HWStation.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\RouteManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

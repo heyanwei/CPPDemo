@@ -8,6 +8,7 @@
 #include "afxdialogex.h"
 
 #include "Test/TestManager.h"
+#include "System/RouteManager/RouteManager.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -103,6 +104,8 @@ BOOL CMFCDemoDlg::OnInitDialog()
 
 	// TODO: 在此添加额外的初始化代码
 	_testMgr = std::make_shared<TestManager>();
+	_routeMgr = std::make_shared<RouteManager>();
+	_routeMgr->LoadMap();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }

@@ -184,6 +184,11 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="System\RouteManager\file\RouteFile.h" />
+    <ClInclude Include="System\RouteManager\object\HWPoint.h" />
+    <ClInclude Include="System\RouteManager\object\HWSegment.h" />
+    <ClInclude Include="System\RouteManager\object\HWStation.h" />
+    <ClInclude Include="System\RouteManager\RouteManager.h" />
     <ClInclude Include="Test\TestManager.h" />
     <ClInclude Include="Test\Utils\TestDataFormat.h" />
     <ClInclude Include="Utils\DataFormat.h" />
@@ -192,8 +197,24 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Utils\File\csv.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\object\HWPoint.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\object\HWSegment.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\object\HWStation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\RouteManager.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Test\TestManager.cpp" />
     <ClCompile Include="Test\Utils\TestDataFormat.cpp" />
     <ClCompile Include="Utils\DataFormat.cpp" />
