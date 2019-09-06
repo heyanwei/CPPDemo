@@ -7,7 +7,6 @@
 #include <memory>
 
 class TestManager;
-class RouteManager;
 
 // CMFCDemoDlg 对话框
 class CMFCDemoDlg : public CDialogEx
@@ -26,7 +25,6 @@ public:
 
 private:
 	std::shared_ptr<TestManager> _testMgr;
-	std::shared_ptr<RouteManager> _routeMgr;
 
 // 实现
 protected:

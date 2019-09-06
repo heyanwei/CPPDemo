@@ -104,8 +104,9 @@ BOOL CMFCDemoDlg::OnInitDialog()
 
 	// TODO: 在此添加额外的初始化代码
 	_testMgr = std::make_shared<TestManager>();
-	_routeMgr = std::make_shared<RouteManager>();
-	_routeMgr->LoadMap();
+
+	RouteManager &routeMgr = RouteManager::Instance();
+	routeMgr.LoadMap();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -164,4 +165,11 @@ HCURSOR CMFCDemoDlg::OnQueryDragIcon()
 void CMFCDemoDlg::OnBnClickedOk()
 {
 	_testMgr->_dataFormat->CStringToUShort();
+
+	RouteManager &routeMgr = RouteManager::Instance();
+	std::map<int, HWPoint> points = routeMgr.GetPointsMap();
+	for (auto iter = points.begin(); iter != points.end(); iter++)
+	{
+		TRACE("point: id - %d\n", iter->second.orgID);
+	}
 }

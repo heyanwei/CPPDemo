@@ -5,8 +5,7 @@
 class RouteManager
 {
 public:
-	RouteManager();
-	~RouteManager();
+	static RouteManager& Instance();
 
 	//¼ÓÔØµØÍ¼//
 	bool LoadMap();
@@ -21,6 +20,9 @@ public:
 	std::map<int, HWStation> GetStationsMap() { return _stationMap; };
 
 private:
+	RouteManager();
+	~RouteManager();
+
 	std::shared_ptr<RouteFile> _routeFile;
 
 	std::map<int, HWPoint> _pointsMap;
