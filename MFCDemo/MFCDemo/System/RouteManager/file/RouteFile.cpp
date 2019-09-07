@@ -13,8 +13,9 @@ RouteFile::~RouteFile()
 {
 }
 
-bool RouteFile::ReadPoints(std::map<int, HWPoint>& pointsMap)
+bool RouteFile::ReadPoints(std::list<HWPoint>& pointsMap)
 {
+	pointsMap.clear();
 	try
 	{
 		csv::CSVReader reader("Layout\\points.txt");
@@ -57,7 +58,7 @@ bool RouteFile::ReadPoints(std::map<int, HWPoint>& pointsMap)
 			}
 			if (point.orgID != 0)
 			{
-				pointsMap[point.orgID] = point;
+				pointsMap.push_back(point);
 			}
 		}
 		return true;
@@ -70,8 +71,9 @@ bool RouteFile::ReadPoints(std::map<int, HWPoint>& pointsMap)
 	return false;
 }
 
-bool RouteFile::ReadStations(std::map<int, HWStation>& stationsMap)
+bool RouteFile::ReadStations(std::list<HWStation>& stationsMap)
 {
+	stationsMap.clear();
 	try
 	{
 		csv::CSVReader reader("Layout\\stations.txt");
@@ -105,7 +107,7 @@ bool RouteFile::ReadStations(std::map<int, HWStation>& stationsMap)
 			}
 			if (station.stationID != 0)
 			{
-				stationsMap[station.stationID] = station;
+				stationsMap.push_back(station);
 			}
 		}
 		return true;
@@ -118,8 +120,9 @@ bool RouteFile::ReadStations(std::map<int, HWStation>& stationsMap)
 	return false;
 }
 
-bool RouteFile::ReadSegments(std::map<int, HWSegment>& segmentsMap)
+bool RouteFile::ReadSegments(std::list<HWSegment>& segmentsMap)
 {
+	segmentsMap.clear();
 	try
 	{
 		csv::CSVReader reader("Layout\\segments.txt");
@@ -183,7 +186,7 @@ bool RouteFile::ReadSegments(std::map<int, HWSegment>& segmentsMap)
 			}
 			if (segment.orgID != 0)
 			{
-				segmentsMap[segment.orgID] = segment;
+				segmentsMap.push_back(segment);
 			}
 		}
 		return true;

@@ -23,23 +23,23 @@ bool RouteManager::BuildAdjacencyMatrix()
 	_adjMatrix.clear();
 	//初始化邻接矩阵//
 	//遍历起点//
-	for (auto spnt = _pointsMap.begin(); spnt != _pointsMap.end(); spnt++)
+	for (auto spnt = _pointsList.begin(); spnt != _pointsList.end(); spnt++)
 	{
 		std::map<int, std::shared_ptr<AdjacencyMatrix>> endMap;
 		//遍历终点//
-		for (auto epnt = _pointsMap.begin(); epnt != _pointsMap.end(); epnt++)
+		for (auto epnt = _pointsList.begin(); epnt != _pointsList.end(); epnt++)
 		{
 			std::shared_ptr<AdjacencyMatrix> adj = std::make_shared<AdjacencyMatrix>();
-			endMap[epnt->first] = adj;
+			endMap[epnt->orgID] = adj;
 		}
-		_adjMatrix[spnt->first] = endMap;
+		_adjMatrix[spnt->orgID] = endMap;
 	}
 
 	//遍历所有的段，如果段的权重小于当前的权重，那么替换掉//
-	for (auto segIter = _segmentMap.begin(); segIter != _segmentMap.end(); segIter++)
+	for (auto segIter = _segmentList.begin(); segIter != _segmentList.end(); segIter++)
 	{
-		int startpnt = segIter->second.startPoint;
-		int endpnt = segIter->second.endPoint;
+		int startpnt = segIter->startPoint;
+		int endpnt = segIter->endPoint;
 
 		std::shared_ptr<AdjacencyMatrix> adj = _adjMatrix[startpnt][endpnt];
 		if (adj == NULL)
@@ -48,12 +48,12 @@ bool RouteManager::BuildAdjacencyMatrix()
 			return false;
 		}
 
-		int segWeight = segIter->second.travelTime + segIter->second.addWeight * 1000;
+		int segWeight = segIter->travelTime + segIter->addWeight * 1000;
 		if (segWeight < adj->weight)
 		{
-			adj->segmentID = segIter->second.orgID;
+			adj->segmentID = segIter->orgID;
 			adj->weight = segWeight;
-			adj->length = segIter->second.length;
+			adj->length = segIter->length;
 
 			_adjMatrix[startpnt][endpnt] = adj;
 		}
@@ -73,26 +73,26 @@ RouteManager & RouteManager::Instance()
 bool RouteManager::LoadMap()
 {
 	TRACE("Load Map...\n");
-	if (!_routeFile->ReadPoints(_pointsMap))
+	if (!_routeFile->ReadPoints(_pointsList))
 	{
 		TRACE("read points failed...\n");
 		return false;
 	}
-	TRACE("read points success, total: %d\n", _pointsMap.size());
+	TRACE("read points success, total: %d\n", _pointsList.size());
 
-	if (!_routeFile->ReadSegments(_segmentMap))
+	if (!_routeFile->ReadSegments(_segmentList))
 	{
 		TRACE("read segments failed...\n");
 		return false;
 	}
-	TRACE("read segments success, total: %d\n", _segmentMap.size());
+	TRACE("read segments success, total: %d\n", _segmentList.size());
 
-	if (!_routeFile->ReadStations(_stationMap))
+	if (!_routeFile->ReadStations(_stationList))
 	{
 		TRACE("read stations failed...\n");
 		return false;
 	}
-	TRACE("read stations success, total: %d\n", _stationMap.size());
+	TRACE("read stations success, total: %d\n", _stationList.size());
 
 	if (!BuildAdjacencyMatrix())
 	{

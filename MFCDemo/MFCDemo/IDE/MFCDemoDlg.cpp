@@ -167,9 +167,9 @@ void CMFCDemoDlg::OnBnClickedOk()
 	_testMgr->_dataFormat->CStringToUShort();
 
 	RouteManager &routeMgr = RouteManager::Instance();
-	std::map<int, HWPoint> points = routeMgr.GetPointsMap();
+	std::list<HWPoint> points = routeMgr.GetPointsList();
 	for (auto iter = points.begin(); iter != points.end(); iter++)
 	{
-		TRACE("point: id - %d\n", iter->second.orgID);
+		TRACE("point: id - %d\n", iter->orgID);
 	}
 }

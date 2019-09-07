@@ -1,5 +1,7 @@
 #pragma once
 
+#include <map>
+
 #include "file/RouteFile.h"
 #include "object/AdjacencyMatrix.h"
 
@@ -12,13 +14,16 @@ public:
 	bool LoadMap();
 
 	//获取点列表//
-	std::map<int, HWPoint> GetPointsMap() { return _pointsMap; };
+	std::list<HWPoint> GetPointsList() { return _pointsList; };
 
 	//获取段列表//
-	std::map<int, HWSegment> GetSegmentsMap() { return _segmentMap; };
+	std::list<HWSegment> GetSegmentsList() { return _segmentList; };
 
 	//获取站台列表//
-	std::map<int, HWStation> GetStationsMap() { return _stationMap; };
+	std::list<HWStation> GetStationsList() { return _stationList; };
+
+	//搜索点到点的路径//
+	//bool SearchPathPntToPnt(int start, int end, )
 
 private:
 	RouteManager();
@@ -29,9 +34,9 @@ private:
 
 	std::shared_ptr<RouteFile> _routeFile;
 
-	std::map<int, HWPoint> _pointsMap;
-	std::map<int, HWSegment> _segmentMap;
-	std::map<int, HWStation> _stationMap;
+	std::list<HWPoint> _pointsList;
+	std::list<HWSegment> _segmentList;
+	std::list<HWStation> _stationList;
 
 	//邻接矩阵//
 	std::map<int, std::map<int, std::shared_ptr<AdjacencyMatrix>>> _adjMatrix;

@@ -184,6 +184,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="System\RouteManager\object\AdjacencyMatrix.h" />
     <ClInclude Include="Test\Singleton\SingletonCT.h" />
     <ClInclude Include="System\RouteManager\file\RouteFile.h" />
     <ClInclude Include="System\RouteManager\object\HWPoint.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="Utils\File\csv.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="System\RouteManager\object\AdjacencyMatrix.cpp" />
     <ClCompile Include="Test\Singleton\SingletonCT.cpp" />
     <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>

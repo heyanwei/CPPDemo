@@ -1,4 +1,7 @@
 #include "stdafx.h"
+
+#include <map>
+
 #include "TestManager.h"
 #include "Singleton/SingletonCT.h"
 
@@ -17,6 +20,7 @@ TestManager::~TestManager()
 
 void TestManager::TestInStart()
 {
+	//测试这种写法的单例模式会不会多次多CT初始化，结果不会//
 	SingletonCT &ct1 = SingletonCT::Instance();
 	ct1.Test();
 
