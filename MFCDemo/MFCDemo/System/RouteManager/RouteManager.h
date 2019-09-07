@@ -1,6 +1,7 @@
 #pragma once
 
 #include "file/RouteFile.h"
+#include "object/AdjacencyMatrix.h"
 
 class RouteManager
 {
@@ -23,10 +24,16 @@ private:
 	RouteManager();
 	~RouteManager();
 
+	//建立邻接矩阵//
+	bool BuildAdjacencyMatrix();
+
 	std::shared_ptr<RouteFile> _routeFile;
 
 	std::map<int, HWPoint> _pointsMap;
 	std::map<int, HWSegment> _segmentMap;
 	std::map<int, HWStation> _stationMap;
+
+	//邻接矩阵//
+	std::map<int, std::map<int, std::shared_ptr<AdjacencyMatrix>>> _adjMatrix;
 };
 
