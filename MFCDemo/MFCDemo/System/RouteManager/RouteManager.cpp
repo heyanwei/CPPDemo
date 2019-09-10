@@ -4,6 +4,12 @@
 #include <algorithm>
 #include <map>
 
+bool RouteManager::SearchPathPntToPnt(int start, int end, int & weight, int & length, std::list<int>& segList)
+{
+
+	return false;
+}
+
 RouteManager::RouteManager()
 {
 	TRACE("Load Route Manager...\n");
@@ -62,6 +68,44 @@ bool RouteManager::BuildAdjacencyMatrix()
 	TRACE(L"BuildAdjacencyMatrix Success...\n");
 
 	return true;
+}
+
+bool RouteManager::Dijkstra(int startPnt)
+{
+	//初始化起点到其他所有顶点的最小权重//
+	std::map<int, int> distanceMap;
+	//已经计算的顶点的标志位//
+	std::map<int, bool> flagMap;
+	//前驱，记录从起点到当前点，经过的上一个点的编号//
+	std::map<int, AdjacencyMatrix> pMap;
+
+	for (auto iter = _adjMatrix.begin(); iter != _adjMatrix.end(); iter++)
+	{
+		std::shared_ptr<AdjacencyMatrix> tmpMatrix = _adjMatrix[startPnt][iter->first];
+		if (!tmpMatrix)
+		{
+			TRACE(L"不能为空...\n");
+			return false;
+		}
+		distanceMap[iter->first] = tmpMatrix->weight;
+		flagMap[iter->first] = false;
+
+		AdjacencyMatrix adj;
+		if (distanceMap[iter->first] == RouteMaxWeight)
+		{
+			//源点到顶点的路径长度为无穷大，说明两个顶点不相邻//
+			adj.weight = RouteMaxWeight;
+			adj.length = RouteMaxLength;
+		}
+		else
+		{
+			//如果两点相邻，设置顶点的前驱为源点//
+			
+		}
+
+	}
+
+	return false;
 }
 
 RouteManager & RouteManager::Instance()

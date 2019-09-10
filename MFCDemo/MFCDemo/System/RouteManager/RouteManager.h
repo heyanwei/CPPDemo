@@ -23,7 +23,8 @@ public:
 	std::list<HWStation> GetStationsList() { return _stationList; };
 
 	//搜索点到点的路径//
-	//bool SearchPathPntToPnt(int start, int end, )
+	bool SearchPathPntToPnt(int start, int end, int &weight, 
+		int &length, std::list<int> &segList);
 
 private:
 	RouteManager();
@@ -31,6 +32,8 @@ private:
 
 	//建立邻接矩阵//
 	bool BuildAdjacencyMatrix();
+	//迪杰斯特拉算法//
+	bool Dijkstra(int startPnt);
 
 	std::shared_ptr<RouteFile> _routeFile;
 
