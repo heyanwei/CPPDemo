@@ -3,9 +3,17 @@
 
 namespace hyw {
 	namespace utils {
+
 		unsigned short CStringToUnShort(CString str)
 		{
 			return _ttoi(str);
+		}
+
+		std::string CStringTostring(CString str)
+		{
+			std::string s = CT2A(str.GetBuffer());
+			str.ReleaseBuffer();
+			return s;
 		}
 	}
 }

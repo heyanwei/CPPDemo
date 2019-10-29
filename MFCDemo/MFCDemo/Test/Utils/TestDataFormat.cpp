@@ -29,3 +29,10 @@ void TestDataFormat::CStringToUShort()
 	k = hyw::utils::CStringToUnShort(str);
 	TRACE("%d ======\n", (int)k);
 }
+
+void TestDataFormat::CStringTostring()
+{
+	CString str = _T("asda");
+	std::string s = hyw::utils::CStringTostring(str);
+	TRACE("%s ======\n", s);
+}

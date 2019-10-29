@@ -165,6 +165,7 @@ HCURSOR CMFCDemoDlg::OnQueryDragIcon()
 void CMFCDemoDlg::OnBnClickedOk()
 {
 	_testMgr->_dataFormat->CStringToUShort();
+	_testMgr->_dataFormat->CStringTostring();
 
 	RouteManager &routeMgr = RouteManager::Instance();
 	std::list<HWPoint> points = routeMgr.GetPointsList();
