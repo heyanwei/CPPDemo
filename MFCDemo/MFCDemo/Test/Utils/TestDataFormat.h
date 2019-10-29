@@ -10,5 +10,8 @@ public:
 
 	//测试CString 转换成 string//
 	void CStringTostring();
+
+	//测试CString 转换成char[]//
+	void CStringToChars();
 };
 

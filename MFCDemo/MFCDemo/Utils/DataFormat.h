@@ -9,5 +9,8 @@ namespace hyw {
 
 		//CString 转换成std::string类型//
 		std::string CStringTostring(CString str);
+
+		//CString 转换成char[]类型//
+		char* CStringToChars(CString str);
 	}
 }

@@ -50,7 +50,7 @@ bool RouteFile::ReadPoints(std::list<HWPoint>& pointsMap)
 					point.plcWord = field.get<int>();
 					break;
 				case 8:
-					point.plcWord2 = field.get<int>();
+					//point.plcWord2 = field.get<int>();
 					break;
 				}
 

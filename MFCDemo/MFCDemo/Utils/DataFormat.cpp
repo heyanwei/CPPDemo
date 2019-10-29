@@ -15,5 +15,12 @@ namespace hyw {
 			str.ReleaseBuffer();
 			return s;
 		}
+
+		char * CStringToChars(CString str)
+		{
+			USES_CONVERSION;
+			char *cs = T2A(str);
+			return cs;
+		}
 	}
 }

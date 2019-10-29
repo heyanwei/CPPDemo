@@ -34,5 +34,17 @@ void TestDataFormat::CStringTostring()
 {
 	CString str = _T("asda");
 	std::string s = hyw::utils::CStringTostring(str);
-	TRACE("%s ======\n", s);
+	TRACE("%s ======\n", s.c_str());
+}
+
+void TestDataFormat::CStringToChars()
+{
+	CString str = _T("asda");
+	char *s = hyw::utils::CStringToChars(str);
+
+	char cs[20];
+	memcpy(cs, s, 20);
+
+	s = cs;
+	TRACE("%s ======\n", cs);
 }

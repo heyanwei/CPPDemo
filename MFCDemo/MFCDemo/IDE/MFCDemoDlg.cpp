@@ -166,6 +166,7 @@ void CMFCDemoDlg::OnBnClickedOk()
 {
 	_testMgr->_dataFormat->CStringToUShort();
 	_testMgr->_dataFormat->CStringTostring();
+	_testMgr->_dataFormat->CStringToChars();
 
 	RouteManager &routeMgr = RouteManager::Instance();
 	std::list<HWPoint> points = routeMgr.GetPointsList();
