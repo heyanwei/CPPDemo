@@ -9,6 +9,7 @@
 
 #include "Test/TestManager.h"
 #include "System/RouteManager/RouteManager.h"
+#include "Utils/DataFormat.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -68,6 +69,7 @@ BEGIN_MESSAGE_MAP(CMFCDemoDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CMFCDemoDlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_BTN_CALC, &CMFCDemoDlg::OnBnClickedBtnCalc)
 END_MESSAGE_MAP()
 
 
@@ -174,4 +176,38 @@ void CMFCDemoDlg::OnBnClickedOk()
 	{
 		TRACE("point: id - %d\n", iter->orgID);
 	}
+
+	routeMgr.GetAllWeightByPoint(6);
+}
+
+
+void CMFCDemoDlg::OnBnClickedBtnCalc()
+{
+	CString startPntC;
+	CString endPntC;
+	GetDlgItemText(IDC_ET_POINT1, startPntC);
+	GetDlgItemText(IDC_ET_POINT2, endPntC);
+
+	if (startPntC.GetLength() < 1 || endPntC.GetLength() < 1)
+	{
+		SetDlgItemText(IDC_ST_CALCRES, _T("ERROR"));
+		return;
+	}
+	
+	int start = hyw::utils::CStringToInt(startPntC);
+	int end = hyw::utils::CStringToInt(endPntC);
+	if ((start <= 0) || (end <= 0))
+	{
+		SetDlgItemText(IDC_ST_CALCRES, _T("ERROR"));
+		return;
+	}
+
+	int weight = RouteMaxWeight;
+	RouteManager& routeMgr = RouteManager::Instance();
+	if (!routeMgr.GetWeight(start, end, weight))
+	{
+		SetDlgItemText(IDC_ST_CALCRES, _T("ERROR"));
+		return;
+	}
+	SetDlgItemText(IDC_ST_CALCRES, hyw::utils::IntToCString(weight));
 }

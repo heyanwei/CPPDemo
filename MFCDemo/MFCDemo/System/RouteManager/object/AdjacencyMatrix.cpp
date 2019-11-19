@@ -4,8 +4,7 @@
 
 AdjacencyMatrix::AdjacencyMatrix()
 {
-	segmentID = 0;
-	length = RouteMaxLength;
+	id = 0;
 	weight = RouteMaxWeight;
 }
 

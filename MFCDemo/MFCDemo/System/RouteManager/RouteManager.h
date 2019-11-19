@@ -26,6 +26,15 @@ public:
 	bool SearchPathPntToPnt(int start, int end, int &weight, 
 		int &length, std::list<int> &segList);
 
+	//搜索点到所有点的权重//
+	bool GetAllWeightByPoint(int pointID);
+
+	//获取点到点的权重//
+	bool GetWeight(int start, int end, int &weight);
+
+	//查看点是否在邻接矩阵中//
+	bool IsPointInMatrix(int point);
+
 private:
 	RouteManager();
 	~RouteManager();
@@ -33,7 +42,8 @@ private:
 	//建立邻接矩阵//
 	bool BuildAdjacencyMatrix();
 	//迪杰斯特拉算法//
-	bool Dijkstra(int startPnt);
+	bool Dijkstra(int startPnt, std::map<int, int>& distanceMap,
+		std::map<int, AdjacencyMatrix>& pMap);
 
 	std::shared_ptr<RouteFile> _routeFile;
 
