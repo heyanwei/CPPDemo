@@ -4,6 +4,11 @@
 #include <algorithm>
 #include <map>
 
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 bool RouteManager::SearchPathPntToPnt(int start, int end, int & weight, int & length, std::list<int>& segList)
 {
 

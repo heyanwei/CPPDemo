@@ -1,5 +1,10 @@
 #include "HWPoint.h"
 
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 HWPoint::HWPoint()
 {
 	orgID=0;

@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "StationDB.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 void StationDB::GetStation()
 {
 	auto& pool = ormpp::connection_pool<ormpp::dbng<ormpp::mysql>>::instance();

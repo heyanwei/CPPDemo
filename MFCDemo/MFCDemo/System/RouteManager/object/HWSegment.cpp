@@ -1,5 +1,10 @@
 #include "HWSegment.h"
 
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 HWSegment::HWSegment()
 {
 	orgID=0;

@@ -4,6 +4,10 @@
 
 #include "Utils/File/csv.hpp"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 RouteFile::RouteFile()
 {
 }

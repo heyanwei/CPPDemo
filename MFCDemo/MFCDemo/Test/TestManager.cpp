@@ -6,6 +6,10 @@
 #include "Singleton/SingletonCT.h"
 #include "System/RouteManager/model/StationDB.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 TestManager::TestManager()
 {
 	_dataFormat = std::make_shared<TestDataFormat>();

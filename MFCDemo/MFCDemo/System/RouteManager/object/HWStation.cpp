@@ -1,5 +1,10 @@
 #include "HWStation.h"
 
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 HWStation::HWStation()
 {
 	stationID=0;
