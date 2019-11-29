@@ -120,7 +120,7 @@
     <ClInclude Include="Utils\SQL\SQLUtils.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="System\RouteManager\model\StationDB.h">
+    <ClInclude Include="System\RouteManager\model\StationModel.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -167,7 +167,7 @@
     <ClCompile Include="Utils\SQL\SQLUtils.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="System\RouteManager\model\StationDB.cpp">
+    <ClCompile Include="System\RouteManager\model\StationModel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

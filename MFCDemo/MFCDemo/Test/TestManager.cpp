@@ -4,7 +4,7 @@
 
 #include "TestManager.h"
 #include "Singleton/SingletonCT.h"
-#include "System/RouteManager/model/StationDB.h"
+#include "System/RouteManager/model/StationModel.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -17,8 +17,10 @@ TestManager::TestManager()
 	//启动时就开始测试//
 	TestInStart();
 
-	StationDB db;
-	db.GetStation();
+	StationModel db;
+	db.CreateStationTable();
+	db.AddStation();
+	db.GetStations();
 }
 
 

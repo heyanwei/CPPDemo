@@ -190,7 +190,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="System\RouteManager\model\StationDB.h" />
+    <ClInclude Include="System\RouteManager\model\StationModel.h" />
     <ClInclude Include="Utils\SQL\SQLUtils.h" />
     <ClInclude Include="System\RouteManager\object\AdjacencyMatrix.h" />
     <ClInclude Include="Test\Singleton\SingletonCT.h" />
@@ -228,7 +228,7 @@
     <ClInclude Include="Utils\SQL\utility.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="System\RouteManager\model\StationDB.cpp" />
+    <ClCompile Include="System\RouteManager\model\StationModel.cpp" />
     <ClCompile Include="Utils\SQL\SQLUtils.cpp" />
     <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
