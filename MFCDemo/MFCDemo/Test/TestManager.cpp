@@ -4,6 +4,7 @@
 
 #include "TestManager.h"
 #include "Singleton/SingletonCT.h"
+#include "System/RouteManager/model/StationDB.h"
 
 TestManager::TestManager()
 {
@@ -11,6 +12,9 @@ TestManager::TestManager()
 
 	//启动时就开始测试//
 	TestInStart();
+
+	StationDB db;
+	db.GetStation();
 }
 
 

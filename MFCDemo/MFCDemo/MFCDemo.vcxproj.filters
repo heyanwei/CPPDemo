@@ -63,6 +63,66 @@
     <ClInclude Include="System\RouteManager\object\AdjacencyMatrix.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\SQL\connection_pool.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\dbng.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\entity.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\mysql.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\ormpp_cfg.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\pg_types.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\postgresql.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\sqlite.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\type_mapping.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\unit_test.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\utility.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\detail\itoa.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\detail\string_stream.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\detail\traits.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\json.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\msgpack.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\reflection.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\iguana\xml.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SQL\SQLUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\RouteManager\model\StationDB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -102,6 +162,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\SQL\SQLUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\RouteManager\model\StationDB.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

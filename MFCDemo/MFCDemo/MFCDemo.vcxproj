@@ -81,7 +81,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)IDE;$(ProjectDir);C:\Program Files\MySQL\MySQL Server 8.0\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)IDE;$(ProjectDir);C:\Program Files\MySQL\MySQL Server 8.0;C:\Program Files\MySQL\MySQL Server 8.0\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\MySQL\MySQL Server 8.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,7 +119,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;ORMPP_ENABLE_MYSQL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -189,6 +190,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="System\RouteManager\model\StationDB.h" />
+    <ClInclude Include="Utils\SQL\SQLUtils.h" />
     <ClInclude Include="System\RouteManager\object\AdjacencyMatrix.h" />
     <ClInclude Include="Test\Singleton\SingletonCT.h" />
     <ClInclude Include="System\RouteManager\file\RouteFile.h" />
@@ -205,8 +208,28 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Utils\File\csv.hpp" />
+    <ClInclude Include="Utils\iguana\detail\itoa.hpp" />
+    <ClInclude Include="Utils\iguana\detail\string_stream.hpp" />
+    <ClInclude Include="Utils\iguana\detail\traits.hpp" />
+    <ClInclude Include="Utils\iguana\json.hpp" />
+    <ClInclude Include="Utils\iguana\msgpack.hpp" />
+    <ClInclude Include="Utils\iguana\reflection.hpp" />
+    <ClInclude Include="Utils\iguana\xml.hpp" />
+    <ClInclude Include="Utils\SQL\connection_pool.hpp" />
+    <ClInclude Include="Utils\SQL\dbng.hpp" />
+    <ClInclude Include="Utils\SQL\entity.hpp" />
+    <ClInclude Include="Utils\SQL\mysql.hpp" />
+    <ClInclude Include="Utils\SQL\ormpp_cfg.hpp" />
+    <ClInclude Include="Utils\SQL\pg_types.h" />
+    <ClInclude Include="Utils\SQL\postgresql.hpp" />
+    <ClInclude Include="Utils\SQL\sqlite.hpp" />
+    <ClInclude Include="Utils\SQL\type_mapping.hpp" />
+    <ClInclude Include="Utils\SQL\unit_test.hpp" />
+    <ClInclude Include="Utils\SQL\utility.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="System\RouteManager\model\StationDB.cpp" />
+    <ClCompile Include="Utils\SQL\SQLUtils.cpp" />
     <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
