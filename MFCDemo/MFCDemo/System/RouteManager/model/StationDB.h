@@ -13,5 +13,15 @@ class StationDB
 {
 public:
 	void GetStation();
+
+	void GetStations();
+
+	bool AddStation();
+
+	bool DeleteStation();
+
+	bool UpdateStation();
+
+
 };
 

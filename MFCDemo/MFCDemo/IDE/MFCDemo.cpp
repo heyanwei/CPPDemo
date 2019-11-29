@@ -6,6 +6,8 @@
 #include "MFCDemo.h"
 #include "MFCDemoDlg.h"
 
+#include "Utils/SQL/SQLUtils.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -51,6 +53,12 @@ BOOL CMFCDemoApp::InitInstance()
 
 	CWinApp::InitInstance();
 
+	SQLUtils& sqlUtils = SQLUtils::Instance();
+	if (!sqlUtils.Init())
+	{
+		AfxMessageBox(_T("数据库初始化失败"));
+		return FALSE;
+	}
 
 	AfxEnableControlContainer();
 

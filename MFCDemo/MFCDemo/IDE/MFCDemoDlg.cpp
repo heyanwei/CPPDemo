@@ -10,7 +10,7 @@
 #include "Test/TestManager.h"
 #include "System/RouteManager/RouteManager.h"
 #include "Utils/DataFormat.h"
-#include "Utils/SQL/SQLUtils.h"
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -106,9 +106,6 @@ BOOL CMFCDemoDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
-
-	SQLUtils& sqlUtils = SQLUtils::Instance();
-	sqlUtils.Init();
 
 	_testMgr = std::make_shared<TestManager>();
 
