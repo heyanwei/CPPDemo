@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "StationModel.h"
 
+#include <string_view>
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -35,21 +37,22 @@ void StationModel::GetStation()
 {
 	auto& pool = ormpp::connection_pool<ormpp::dbng<ormpp::mysql>>::instance();
 	auto conn = pool.get();
-	
-	auto res = conn->query<tb_station>();
-	TRACE(L"输出查询结果：%d\n", res.size());
+
+	auto stations = conn->query<tb_station>("select * from tb_station where stationID=1");
+	for (auto stn : stations)
+	{
+		TRACE(L"输出查询结果：%d\n", stn.stationID);
+	}
+		
 }
 
 void StationModel::GetStations()
 {
 	auto& pool = ormpp::connection_pool<ormpp::dbng<ormpp::mysql>>::instance();
-	auto conn1 = pool.get();
-	auto stations = conn1->query<tb_station>();
-	for (auto stn : stations)
-	{
-		TRACE(L"输出查询结果：%d\n", stn.stationID);
-	}
-	
+	auto conn = pool.get();
+
+	auto res = conn->query<tb_station>();
+	TRACE(L"输出查询结果：%d\n", res.size());	
 }
 
 bool StationModel::AddStation()

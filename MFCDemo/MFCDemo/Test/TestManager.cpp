@@ -20,6 +20,7 @@ TestManager::TestManager()
 	StationModel db;
 	db.CreateStationTable();
 	db.AddStation();
+	db.GetStation();
 	db.GetStations();
 }
 
