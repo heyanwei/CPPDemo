@@ -22,7 +22,7 @@ bool RouteFile::ReadPoints(std::list<HWPoint>& pointsMap)
 	pointsMap.clear();
 	try
 	{
-		csv::CSVReader reader("Layout\\points.txt");
+		csv::CSVReader reader("config\\points.txt");
 		for (csv::CSVRow &row : reader)
 		{
 			HWPoint point;
@@ -80,7 +80,7 @@ bool RouteFile::ReadStations(std::list<HWStation>& stationsMap)
 	stationsMap.clear();
 	try
 	{
-		csv::CSVReader reader("Layout\\stations.txt");
+		csv::CSVReader reader("config\\stations.txt");
 		for (csv::CSVRow &row : reader)
 		{
 			HWStation station;
@@ -129,7 +129,7 @@ bool RouteFile::ReadSegments(std::list<HWSegment>& segmentsMap)
 	segmentsMap.clear();
 	try
 	{
-		csv::CSVReader reader("Layout\\segments.txt");
+		csv::CSVReader reader("config\\segments.txt");
 		for (csv::CSVRow &row : reader)
 		{
 			HWSegment segment;
