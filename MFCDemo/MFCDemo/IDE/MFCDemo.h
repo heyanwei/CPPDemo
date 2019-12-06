@@ -20,6 +20,9 @@ class CMFCDemoApp : public CWinApp
 public:
 	CMFCDemoApp();
 
+private:
+	static void RollbackHandle(const char* filename, std::size_t size) {};
+
 // 重写
 public:
 	virtual BOOL InitInstance();

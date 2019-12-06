@@ -119,7 +119,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;ORMPP_ENABLE_MYSQL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;ORMPP_ENABLE_MYSQL;DATE_ROLL_BACK_LOG;ELPP_THREAD_SAFE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -191,6 +191,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="System\RouteManager\model\StationModel.h" />
+    <ClInclude Include="Utils\Log\easylogging++.h" />
     <ClInclude Include="Utils\SQL\SQLUtils.h" />
     <ClInclude Include="System\RouteManager\object\AdjacencyMatrix.h" />
     <ClInclude Include="Test\Singleton\SingletonCT.h" />
@@ -226,9 +227,13 @@
     <ClInclude Include="Utils\SQL\type_mapping.hpp" />
     <ClInclude Include="Utils\SQL\unit_test.hpp" />
     <ClInclude Include="Utils\SQL\utility.hpp" />
+    <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System\RouteManager\model\StationModel.cpp" />
+    <ClCompile Include="Utils\Log\easylogging++.cc">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Utils\SQL\SQLUtils.cpp" />
     <ClCompile Include="System\RouteManager\file\RouteFile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>

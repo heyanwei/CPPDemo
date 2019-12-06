@@ -6,7 +6,12 @@
 #include "MFCDemo.h"
 #include "MFCDemoDlg.h"
 
+#include "Utils/Log/easylogging++.h"
+
 #include "Utils/SQL/SQLUtils.h"
+#include "Version.h"
+
+INITIALIZE_EASYLOGGINGPP
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -53,9 +58,43 @@ BOOL CMFCDemoApp::InitInstance()
 
 	CWinApp::InitInstance();
 
+	//可限制用户打开多个该程序//
+	HANDLE appInstance;
+	appInstance = ::CreateMutex(NULL, FALSE, HW_SYSTEM_NAME);
+	if (GetLastError() == ERROR_ALREADY_EXISTS)
+	{
+		if (appInstance)
+		{
+			CloseHandle(appInstance);
+		}	
+		AfxMessageBox(_T("软件已启动"));
+		return FALSE;
+	}
+
+	el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Format,
+		"%datetime|%level: %msg [%fbase %line]");
+	el::Loggers::reconfigureAllLoggers(el::ConfigurationType::Filename, "Log\\_%datetime{%Y%M%d}.log");
+	el::Loggers::reconfigureAllLoggers(el::ConfigurationType::MaxLogFileSize, "2097152");
+	el::Loggers::reconfigureAllLoggers(el::ConfigurationType::PerformanceTracking, "false");
+	el::Loggers::reconfigureAllLoggers(el::ConfigurationType::ToStandardOutput, "false");
+
+	el::Loggers::addFlag(el::LoggingFlag::StrictLogFileSizeCheck);
+	el::Loggers::addFlag(el::LoggingFlag::DisableApplicationAbortOnFatalLog);
+
+	el::Helpers::installPreRollOutCallback(RollbackHandle);
+
+	LOG(INFO) << "==============================";
+	LOG(INFO) << "==============================";
+	LOG(INFO) << "===== "<< HW_SYSTEM_NAME<<"已启动 " << HW_VERSION_NUMBER << "=====";
+	LOG(INFO) << "===更新时间：" << HW_UPDATE_TIME << "==";
+	LOG(INFO) << "==============================";
+	LOG(INFO) << "==============================";
+	LOG(INFO) << "==============================";
+
 	SQLUtils& sqlUtils = SQLUtils::Instance();
 	if (!sqlUtils.Init())
 	{
+		LOG(ERROR) << "系统启动失败：数据库初始化失败";
 		AfxMessageBox(_T("数据库初始化失败"));
 		return FALSE;
 	}
@@ -83,18 +122,15 @@ BOOL CMFCDemoApp::InitInstance()
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
 	{
-		// TODO: 在此放置处理何时用
-		//  “确定”来关闭对话框的代码
+		LOG(INFO) << "==============系统正常结束";
 	}
 	else if (nResponse == IDCANCEL)
 	{
-		// TODO: 在此放置处理何时用
-		//  “取消”来关闭对话框的代码
+		LOG(INFO) << "==============系统取消结束";
 	}
 	else if (nResponse == -1)
 	{
-		TRACE(traceAppMsg, 0, "警告: 对话框创建失败，应用程序将意外终止。\n");
-		TRACE(traceAppMsg, 0, "警告: 如果您在对话框上使用 MFC 控件，则无法 #define _AFX_NO_MFC_CONTROLS_IN_DIALOGS。\n");
+		LOG(ERROR) << "==============系统异常结束";
 	}
 
 	// 删除上面创建的 shell 管理器。
