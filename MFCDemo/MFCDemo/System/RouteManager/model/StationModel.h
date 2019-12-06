@@ -2,41 +2,43 @@
 
 #include "Utils/SQL/SQLUtils.h"
 
-struct tb_station {
-	int stationID;
-	int pointID;
-	std::string type;
-	int sysMode;
-	int carrierTypes;
+namespace route {
+	struct tb_station {
+		int stationID;
+		int pointID;
+		std::string type;
+		int sysMode;
+		int carrierTypes;
 
-	tb_station()
+		tb_station()
+		{
+			stationID = 0;
+			pointID = 0;
+			type = "";
+			sysMode = 0;
+			carrierTypes = 0;
+		}
+	};
+	REFLECTION(tb_station, stationID, pointID, type, sysMode, carrierTypes)
+
+		class StationModel
 	{
-		stationID = 0;
-		pointID = 0;
-		type = "";
-		sysMode = 0;
-		carrierTypes = 0;
-	}
-};
-REFLECTION(tb_station, stationID, pointID, type, sysMode, carrierTypes)
+	public:
+		void CreateStationTable();
 
-class StationModel
-{
-public:
-	void CreateStationTable();
+		void GetStation();
 
-	void GetStation();
+		void GetStations();
 
-	void GetStations();
+		bool AddStation();
 
-	bool AddStation();
+		bool AddStations();
 
-	bool AddStations();
+		bool DeleteStation();
 
-	bool DeleteStation();
-
-	bool UpdateStation();
+		bool UpdateStation();
 
 
-};
+	};
 
+}

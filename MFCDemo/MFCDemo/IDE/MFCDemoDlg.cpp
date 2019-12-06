@@ -109,7 +109,7 @@ BOOL CMFCDemoDlg::OnInitDialog()
 
 	_testMgr = std::make_shared<TestManager>();
 
-	RouteManager &routeMgr = RouteManager::Instance();
+	route::RouteManager &routeMgr = route::RouteManager::Instance();
 	routeMgr.LoadMap();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
@@ -172,8 +172,8 @@ void CMFCDemoDlg::OnBnClickedOk()
 	_testMgr->_dataFormat->CStringTostring();
 	_testMgr->_dataFormat->CStringToChars();
 
-	RouteManager &routeMgr = RouteManager::Instance();
-	std::list<HWPoint> points = routeMgr.GetPointsList();
+	route::RouteManager &routeMgr = route::RouteManager::Instance();
+	std::list<route::HWPoint> points = routeMgr.GetPointsList();
 	for (auto iter = points.begin(); iter != points.end(); iter++)
 	{
 		TRACE("point: id - %d\n", iter->orgID);
@@ -205,7 +205,7 @@ void CMFCDemoDlg::OnBnClickedBtnCalc()
 	}
 
 	int weight = RouteMaxWeight;
-	RouteManager& routeMgr = RouteManager::Instance();
+	route::RouteManager& routeMgr = route::RouteManager::Instance();
 	if (!routeMgr.GetWeight(start, end, weight))
 	{
 		SetDlgItemText(IDC_ST_CALCRES, _T("ERROR"));

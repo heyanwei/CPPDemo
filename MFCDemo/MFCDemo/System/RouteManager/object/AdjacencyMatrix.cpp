@@ -6,13 +6,16 @@
 #define new DEBUG_NEW
 #endif
 
-AdjacencyMatrix::AdjacencyMatrix()
-{
-	id = 0;
-	weight = RouteMaxWeight;
-}
 
+namespace route {
+	AdjacencyMatrix::AdjacencyMatrix()
+	{
+		id = 0;
+		weight = RouteMaxWeight;
+	}
 
-AdjacencyMatrix::~AdjacencyMatrix()
-{
+	AdjacencyMatrix::~AdjacencyMatrix()
+	{
+	}
+
 }

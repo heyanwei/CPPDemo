@@ -7,16 +7,19 @@
 #include <list>
 #include <memory>
 
-class RouteFile
-{
-public:
-	RouteFile();
-	~RouteFile();
+namespace route {
+	class RouteFile
+	{
+	public:
+		RouteFile();
+		~RouteFile();
 
-	bool ReadPoints(std::list<HWPoint> &pointsMap);
-	bool ReadStations(std::list<HWStation> &stationsMap);
-	bool ReadSegments(std::list<HWSegment> &segmentsMap);
+		bool ReadPoints(std::list<HWPoint>& pointsMap);
+		bool ReadStations(std::list<HWStation>& stationsMap);
+		bool ReadSegments(std::list<HWSegment>& segmentsMap);
 
 
-};
+	};
+}
+
 

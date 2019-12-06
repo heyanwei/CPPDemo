@@ -2,17 +2,20 @@
 
 #include <string>
 
-class HWStation
-{
-public:
-	HWStation();
-	~HWStation();
+namespace route {
+	class HWStation
+	{
+	public:
+		HWStation();
+		~HWStation();
 
-public:
-	int stationID;
-	int pointID;
-	std::string type;
-	int sysMode;
-	int carrierTypes;
-};
+	public:
+		int stationID;
+		int pointID;
+		std::string type;
+		int sysMode;
+		int carrierTypes;
+	};
+}
+
 

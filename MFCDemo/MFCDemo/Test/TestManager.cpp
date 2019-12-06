@@ -17,7 +17,7 @@ TestManager::TestManager()
 	//启动时就开始测试//
 	TestInStart();
 
-	StationModel db;
+	route::StationModel db;
 	db.CreateStationTable();
 	db.AddStation();
 	db.GetStation();
