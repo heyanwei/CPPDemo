@@ -190,7 +190,10 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="System\LiftManager\Lift.h" />
+    <ClInclude Include="System\LiftManager\model\FloorModel.h" />
+    <ClInclude Include="System\LiftManager\model\TaskModel.h" />
+    <ClInclude Include="System\LiftManager\model\LiftModel.h" />
+    <ClInclude Include="System\LiftManager\LiftManager.h" />
     <ClInclude Include="System\RouteManager\model\StationModel.h" />
     <ClInclude Include="Utils\Log\easylogging++.h" />
     <ClInclude Include="Utils\SQL\SQLUtils.h" />
@@ -231,7 +234,10 @@
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="System\LiftManager\Lift.cpp" />
+    <ClCompile Include="System\LiftManager\model\FloorModel.cpp" />
+    <ClCompile Include="System\LiftManager\model\TaskModel.cpp" />
+    <ClCompile Include="System\LiftManager\model\LiftModel.cpp" />
+    <ClCompile Include="System\LiftManager\LiftManager.cpp" />
     <ClCompile Include="System\RouteManager\model\StationModel.cpp" />
     <ClCompile Include="Utils\Log\easylogging++.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>

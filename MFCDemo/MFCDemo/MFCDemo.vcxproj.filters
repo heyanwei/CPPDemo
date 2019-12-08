@@ -129,7 +129,16 @@
     <ClInclude Include="Version.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="System\LiftManager\Lift.h">
+    <ClInclude Include="System\LiftManager\model\LiftModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\LiftManager\model\FloorModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\LiftManager\model\TaskModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\LiftManager\LiftManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -182,7 +191,16 @@
     <ClCompile Include="Utils\Log\easylogging++.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="System\LiftManager\Lift.cpp">
+    <ClCompile Include="System\LiftManager\model\LiftModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\LiftManager\model\FloorModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\LiftManager\model\TaskModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\LiftManager\LiftManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
