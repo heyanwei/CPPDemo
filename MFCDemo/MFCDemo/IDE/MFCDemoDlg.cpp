@@ -10,6 +10,7 @@
 #include "Test/TestManager.h"
 #include "System/RouteManager/RouteManager.h"
 #include "Utils/DataFormat.h"
+#include "System/LiftManager/LiftManager.h"
 
 
 #ifdef _DEBUG
@@ -111,6 +112,9 @@ BOOL CMFCDemoDlg::OnInitDialog()
 
 	route::RouteManager &routeMgr = route::RouteManager::Instance();
 	routeMgr.LoadMap();
+
+	lift::LiftManager& liftMgr = lift::LiftManager::Instance();
+	liftMgr.Init();
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }

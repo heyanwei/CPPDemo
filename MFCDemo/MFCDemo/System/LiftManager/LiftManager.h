@@ -7,10 +7,14 @@ namespace lift {
 	{
 	public:
 		static LiftManager& Instance();
+
+		bool Init();
 	
 	private:
 		LiftManager();
 		~LiftManager();
+
+
 	};
 }
 
