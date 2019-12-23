@@ -141,6 +141,9 @@
     <ClInclude Include="System\LiftManager\LiftManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Test\TestClass\ClassInt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -201,6 +204,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="System\LiftManager\LiftManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\TestClass\ClassInt.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -190,6 +190,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Test\TestClass\ClassInt.h" />
     <ClInclude Include="System\LiftManager\model\FloorModel.h" />
     <ClInclude Include="System\LiftManager\model\TaskModel.h" />
     <ClInclude Include="System\LiftManager\model\LiftModel.h" />
@@ -234,6 +235,7 @@
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Test\TestClass\ClassInt.cpp" />
     <ClCompile Include="System\LiftManager\model\FloorModel.cpp" />
     <ClCompile Include="System\LiftManager\model\TaskModel.cpp" />
     <ClCompile Include="System\LiftManager\model\LiftModel.cpp" />
